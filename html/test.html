@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="../scripts/jquery-3.2.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                
+                
+            });
+            function submitPhp(){
+                var code = $("#codeIn").val();
+                console.log(code);
+                $.ajax({
+                        url: "http://phpfiddle.org/api/run/code/json",
+                        type: "POST",
+                        data: "code=" + code,
+                        cache: false,
+                        dataType: "json",
+                        success: function(data) {
+                                console.log(data);
+                        }
+                    });
+
+            }
+        </script>
+    </head>
+    <body>
+        <textarea rows="8" cols="80" name = "code" id = "codeIn" class = "codeArea PHP"></textarea>
+        <button onclick="submitPhp()">GO</button>
+    </body>
+</html>
