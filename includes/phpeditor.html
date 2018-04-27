@@ -3,10 +3,32 @@
     </div>
     <div id = "result-window">
     </div>
+    <button id="runPhpBtn">RUN</button>
 </div>
 <script src="../scripts/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/php");
+    
+    function runCode(){
+        var code = editor.getValue();
+        $.ajax({
+            url: "http://phpfiddle.org/api/run/code/json",
+            type: "POST",
+            data: "code=" + encodeURIComponent(code),
+            cache: false,
+            dataType: "json",
+            success: function(data) {
+                    if(!data.error){
+                        $("#result-window").html(data.result);;
+                    }
+            }
+        });
+    }
+    
+    $(document).ready(function(){
+        $("#runPhpBtn").click(runCode);
+    });
+    
 </script>
