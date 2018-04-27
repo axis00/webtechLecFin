@@ -1,17 +1,24 @@
-<div id = "editorContainer">
-    <div id = "editor">
+<div id="main-container">
+    <div id="editorContainer">
+        <div id="editor">
+        </div>
     </div>
-    <div id = "result-window">
+    <div id="result-container">
+        <div id="result-window">
+            <div id="button-container">
+                <button id="runPhpBtn">RUN</button>
+            </div>
+        </div>
     </div>
-    <button id="runPhpBtn">RUN</button>
 </div>
 <script src="../scripts/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.session.setMode("ace/mode/php");
-    
-    function runCode(){
+    editor.setOption("showPrintMargin", false);
+
+    function runCode() {
         var code = editor.getValue();
         $.ajax({
             url: "http://phpfiddle.org/api/run/code/json",
@@ -20,15 +27,15 @@
             cache: false,
             dataType: "json",
             success: function(data) {
-                    if(!data.error){
-                        $("#result-window").html(data.result);;
-                    }
+                if (!data.error) {
+                    $("#result-window").html(data.result);;
+                }
             }
         });
     }
-    
-    $(document).ready(function(){
+
+    $(document).ready(function() {
         $("#runPhpBtn").click(runCode);
     });
-    
+
 </script>

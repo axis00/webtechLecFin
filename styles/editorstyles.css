@@ -1,12 +1,43 @@
-#editorContainer{
-    height: 100%;
+#main-container {
     width: 100%;
+    height: 100%;
+}
+
+#editorContainer{
+    left: 0;
+    height: 100%;
+    width: 60%;
     position: absolute;
+    float: left;
 }
 
 #editor{
-    width: 50%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
+}
+#result-container {
+    right: 0;
+    height: 100%;
+    width: 39.95%;
+    position: absolute;
+}
+
+#result-window {
+    color: #fff;
+    width: 100%;    
+    height: 100%;
+    background-color: #272822;
+}
+
+#button-container {
+    position: absolute;
+    background-color: #2f3129;
+    width: 100%;
+    bottom: 0;
+}
+
+#button-container button {
+    float: right;
 }
