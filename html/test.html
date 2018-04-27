@@ -13,11 +13,13 @@
                 $.ajax({
                         url: "http://phpfiddle.org/api/run/code/json",
                         type: "POST",
-                        data: "code=" + code,
+                        data: "code=" + encodeURIComponent(code),
                         cache: false,
                         dataType: "json",
                         success: function(data) {
-                                console.log(data);
+                                if(!data.error){
+                                    $("#result").html(data.result);;
+                                }
                         }
                     });
 
@@ -27,5 +29,6 @@
     <body>
         <textarea rows="8" cols="80" name = "code" id = "codeIn" class = "codeArea PHP"></textarea>
         <button onclick="submitPhp()">GO</button>
+        <div id = "result"></div>
     </body>
 </html>
