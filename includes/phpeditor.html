@@ -1,0 +1,12 @@
+<div id = "editorContainer">
+    <div id = "editor">
+    </div>
+    <div id = "result-window">
+    </div>
+</div>
+<script src="../scripts/ace/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/php");
+</script>
