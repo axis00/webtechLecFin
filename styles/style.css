@@ -1,3 +1,6 @@
+h1{
+    text-align: center;
+}
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
@@ -280,4 +283,18 @@ footer{
 footer p{ 
    padding: 0;
     margin: 3px;
+}
+
+ul{
+    list-style: none;
+}
+
+#creators{
+    text-align: center;
+}
+
+img{
+    width: auto;
+    margin: auto;
+    
 }
