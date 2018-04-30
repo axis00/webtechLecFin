@@ -9,6 +9,8 @@ $(document).ready(function(){
 
 var m_questionNumber = 0;
 var n_attemps = 0;
+var n_score = 0;
+var correctAnswer;
 
 function startQuiz(){
 
@@ -49,6 +51,8 @@ function nextBtnAction(){
 		ans = $("input[name=user-answer]").val().toLowerCase();
 	}
 
+    console.log(ans);
+    
 	if(!ans){
 		console.log("enter an answer");
 	} else {
@@ -58,9 +62,9 @@ function nextBtnAction(){
 			data : {op : "check" , questionNumber : m_questionNumber , answer : ans},
 			success : function(data){
 				if(data === 'true'){
-					getNextQuestion();
+					handleCorrectAnswer();
 				}else{
-					wrongAnswer();
+					handleWrongAnswer();
 				}
 			}
 		});
@@ -68,8 +72,14 @@ function nextBtnAction(){
 
 }
 
-function wrongAnswer(){
+function handleCorrectAnswer(){
+	n_attemps = 0;
+	getNextQuestion();
+}
+
+function handleWrongAnswer(){
 	console.log("sir Montes is not happy");
+	n_attemps++;
 }
 
 function getNextQuestion() {
@@ -94,6 +104,8 @@ function getNextQuestion() {
 					choices[2] = q[0].choice2;
 					choices[3] = q[0].choice3;
 
+					correctAnswer = q[0].answer;
+
 					$("#explanation").html(q[0].description);
 
 					$("#answers").html("");
@@ -105,6 +117,8 @@ function getNextQuestion() {
 
 					$("#question").html(q[0].question);
 					$("#explanation").html(q[0].description);
+
+					correctAnswer = q[0].answer;
 
 					var input = $("<input>",{id : "answerBox", "type" : "text", "name" : "user-answer"});
 					$("#answers").html("");
