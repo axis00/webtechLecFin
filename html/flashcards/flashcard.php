@@ -2,7 +2,7 @@
 
 	$url = 'localhost';
 	$user = 'root';
-	$pass = 'root';
+	$pass = '';
 	$db = 'webtechlec';
 
 	$conn = mysqli_connect($url,$user,$pass,$db);

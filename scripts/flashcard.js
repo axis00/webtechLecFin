@@ -31,7 +31,7 @@ function shuffleArray(arr){
 function showChoices(arr){
 	for(var i in arr){
 		var radID = "rad_" + i;
-		var input = $("<input>",{id : radID , "type" : "radio", "name" : "user-answer" , "value" : arr[i]});
+		var input = $("<input>",{id : radID , class : "radButtons",  "type" : "radio", "name" : "user-answer" , "value" : arr[i]});
 		var radLabel = $("<label>",{"for" : radID});
 		radLabel.html(arr[i]);
 		$("#answers").append(input);

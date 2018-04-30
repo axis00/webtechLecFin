@@ -1,20 +1,80 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<script src="../../scripts/jquery-3.2.1.min.js"></script>
-		<script src="../../scripts/flashcard.js"></script>
-	</head>
-	<body>
-		<button id = "startQuizBtn">GO</button>
-		<div id = "quizContainer" style="display: none;">
-			<button id = "nextQuestionBtn">NEXT</button>
-			<button id = "explainBtn">EXPLAIN</button>
-			<p id = "question"></p>
-			<form id = "answers">
-				
-			</form>
-			<div id = "explanation">
-			</div>
-		</div>
-	</body>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../../styles/flashcards-style.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/nav.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../styles/flashcards-style.css">
+    <script src="../../scripts/jquery-3.2.1.min.js"></script>
+    <script src="../../scripts/flashcard.js"></script>
+</head>
+
+<body>
+    <h1>WebLex: Web Systems and Technologies</h1>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li>
+                <div class="dropdown">
+                    <div class="dropdown-button"><a href="../../html/topics.html">Server Side Scripting</a>
+                        <div class="dropdown-content">
+                            <a href="../../html/java.html">Java</a>
+                            <a href="../../html/php.html">PHP</a>
+                            <a>JavaScript</a>
+                            <a>Active Server Pages</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <div class="dropdown-button">
+                        <a href="../../html/flashcards/index.html">Review</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="../../html/glossary.html">Glossary</a></li>
+            <li><a href="../../html/about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div id="mini-hero-banner">
+        <div id="particles-js"></div>
+
+        <script type="text/javascript" src="../../scripts/particles.js"></script>
+        <script type="text/javascript" src="../../scripts/particles-app.js"></script>
+        <div class="wrapper">
+            <h1>Review</h1>
+        </div>
+        
+    </div>
+    <div id="page-content">
+        
+        <div class="goBtnContainer">
+            <button id="startQuizBtn">GO</button>
+        </div>
+        <div id="quizContainer" style="display: none;">
+            <table id="btnTable">
+                <tr>
+                    <td>
+                        <button id="nextQuestionBtn" class="quizButtons">NEXT</button>
+                    </td>
+                    <td>
+                        <button id="explainBtn" class="quizButtons">EXPLAIN</button>
+                    </td>
+                </tr>
+            </table>
+            <p id="question"></p>
+            <form id="answers">
+
+            </form>
+            <div id="explanation">
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

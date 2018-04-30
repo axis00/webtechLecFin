@@ -1,0 +1,91 @@
+#ready {
+    text-align: center;
+}
+.goBtnContainer {
+    display: grid;
+    width: inherit;
+    padding-top: 15px;
+}
+
+.goBtnContainer #startQuizBtn {
+    font-family: sans-serif;
+    background-color: #1c1129;
+    border-radius: 50px;
+    padding: 25px 90px;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    margin: auto;
+    border: 0;
+}
+
+#startQuizBtn:hover {
+    -webkit-animation: hover 1500s ;
+    animation: hover 1500ms ;
+}
+
+@-webkit-keyframes hover {
+    50% {
+        -webkit-transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    100% {
+        -webkit-transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+}
+
+@keyframes hover {
+    50% {
+        -webkit-transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    100% {
+        -webkit-transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+}
+
+#quizContainer{
+    display: grid;
+    text-align: center;
+}
+
+#btnTable {
+    margin: auto;
+}
+
+table, th, td {
+    border: 0;
+}
+
+.quizButtons {
+    margin: 0 50% 0 50%;
+    border-radius: 25px;
+    font-family: sans-serif;
+    background-color: #1c1129;
+    padding: 25px 0;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin: auto;
+    border: 0;
+    width: 300px;
+}
+
+#question {
+    font-size: 25px;
+}
+
+#answers {
+    font-size: 20px;
+}
+
+#explanation {
+    padding: 15px;
+    font-size: 20px;
+}
+
+.radButtons {
+    padding: 50px;
+}
