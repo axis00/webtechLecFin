@@ -1,6 +1,5 @@
-#ready {
-    text-align: center;
-}
+
+
 .goBtnContainer {
     display: grid;
     width: inherit;
@@ -16,37 +15,22 @@
     font-size: 2em;
     cursor: pointer;
     margin: auto;
-    border: 0;
+    border: 3px;
+    border-style: solid;
+    border-color: #1c1129;
 }
 
 #startQuizBtn:hover {
-    -webkit-animation: hover 1500s ;
-    animation: hover 1500ms ;
+    background: linear-gradient(to bottom, #18243F 0%, #301c30 100%);
+    -webkit-transition: background 0.5s ease;
+    border: 3px;
+    border-style: solid;
+    border-color: #1c1129;
 }
 
-@-webkit-keyframes hover {
-    50% {
-        -webkit-transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-        transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    }
-    100% {
-        -webkit-transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-        transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    }
-}
 
-@keyframes hover {
-    50% {
-        -webkit-transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-        transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    }
-    100% {
-        -webkit-transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-        transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    }
-}
 
-#quizContainer{
+#quizContainer {
     display: grid;
     text-align: center;
 }
@@ -55,7 +39,9 @@
     margin: auto;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 0;
 }
 
@@ -73,8 +59,13 @@ table, th, td {
     width: 300px;
 }
 
+.quizButtons:hover {
+    background: linear-gradient(to bottom, #18243F 0%, #301c30 100%);
+    -webkit-transition: background 0.5s ease;
+}
+
 #question {
-    font-size: 25px;
+    color: #1c1129;
 }
 
 #answers {
@@ -82,8 +73,13 @@ table, th, td {
 }
 
 #explanation {
-    padding: 15px;
-    font-size: 20px;
+    padding: 2vh;
+    border-color: linear-gradient(to bottom, #18243F 0%, #301c30 100%);
+    border-style: solid;
+    text-align: center;
+    border-radius: 1vh;
+    color: #1c1129;
+    margin: 10px 25%;
 }
 
 .radButtons {
