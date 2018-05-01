@@ -65,6 +65,7 @@ td {
 }
 
 #question {
+    font-size: 20px;
     color: #1c1129;
 }
 
@@ -83,5 +84,5 @@ td {
 }
 
 .radButtons {
-    padding: 50px;
+    margin-left: 5%;
 }
