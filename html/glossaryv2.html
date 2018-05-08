@@ -1,0 +1,106 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Glossary</title>
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/nav.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script src="../scripts/jquery-3.2.1.min.js"></script>
+    <script async src="../scripts/stickynav.js"></script>
+    <script async src="../scripts/search.js"></script>
+</head>
+
+<body>
+    <h1>WebLex: Web Systems and Technologies</h1>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li>
+                <div class="dropdown">
+                    <div class="dropdown-button"><a href="../html/finals.html">Server Side Scripting</a>
+                        <div class="dropdown-content">
+                            <a href="../html/java.html">Java</a>
+                            <a href="../html/php.html">PHP</a>
+                            <a href="../html/javascript.html">JavaScript</a>
+                            <a href="websecurity.html">Web Security</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="dropdown">
+                    <div class="dropdown-button">
+                        <a href="../html/flashcards/index.html">Review</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="../html/glossaryv2.html">Glossary</a></li>
+            <li><a href="../html/about.html">About</a></li>
+        </ul>
+    </nav>
+    
+    <div id="mini-hero-banner">
+        <div id="particles-js"></div>
+
+        <script type="text/javascript" src="../scripts/particles.js"></script>
+        <script type="text/javascript" src="../scripts/particles-app.js"></script>
+        <div class="wrapper">
+            <h1>Glossary of Terms</h1>
+        </div>
+    </div>
+
+    <div class="content">
+        <input type="text" id="keyword" onkeyup="searchword()" placeholder="Search glossary terms..." title="searchbar">
+
+        <table id="glossary">
+            <tr class="top-header">
+                <th style="width:30%;"></th>
+                <th style="width:70%;"></th>
+            </tr>
+            <tr>
+                <td>
+                    <h2>J</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>JavaServer Page</h3>
+                </td>
+                <td>
+                    <p><a href="java.html#server-pages">JavaServer Pages (JSP)</a> is a server-side programming technology that allows the developer to create dynamic web applications.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Java Servlet</h3>
+                </td>
+                <td>
+                    <p><a href="java.html#servlets">Java Servlets</a> are programs that handle HTTP requests and generate HTTP responses. This technology is hosted in a servlet container that provides the environment in which the servlet runs, and it also serves as a means of controlling the servlet.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>W</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Web Applications</h3>
+                </td>
+                <td>
+                    <p>Web applications are programs from a server that can be run and used in multiple computers through web browsers.</p>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <footer>
+        <p>WebLex 2018</p>
+        <p>Saint Louis University - School of Information and Computer Sciences. Web Systems and Technology 2nd Semester S.Y. 2017-2018. 9331A - Group 3</p>
+    </footer>
+</body>
+
+</html>

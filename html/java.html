@@ -13,18 +13,17 @@
 
 
     <h1>WebLex: Web Systems and Technologies</h1>
-
     <nav>
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <div class="dropdown-button"><a href="../html/topics.html">Server Side Scripting</a>
+                    <div class="dropdown-button"><a href="../html/finals.html">Server Side Scripting</a>
                         <div class="dropdown-content">
                             <a href="../html/java.html">Java</a>
                             <a href="../html/php.html">PHP</a>
-                            <a>JavaScript</a>
-                            <a>Active Server Pages</a>
+                            <a href="../html/javascript.html">JavaScript</a>
+                            <a href="websecurity.html">Web Security</a>
                         </div>
                     </div>
                 </div>
@@ -36,7 +35,7 @@
                     </div>
                 </div>
             </li>
-            <li><a href="../html/glossary.html">Glossary</a></li>
+            <li><a href="../html/glossaryv2.html">Glossary</a></li>
             <li><a href="../html/about.html">About</a></li>
         </ul>
     </nav>
@@ -65,12 +64,14 @@
         <div id="topic-content">
             <div id="java">
                 <h3>About Java Technologies</h3>
-                <p>Java is an object-oriented programming language that can also be used for developing web applications. Web applications are programs from a server that can be run and used in multiple computers through web browsers or other web technologies. There are different Java technologies that are used to create web applications under the Java EE(Enterprise Edition) platform. There are many technologies available, however there are only two Java technologies that will be discused in this course, and they are <a href="#servlets">Java Servlet</a> and <a href="#server-pages">JavaServer Pages.</a></p>
+                <p>Java is an object-oriented programming language that can also be used for developing web applications. Web applications are programs from a server that can be run and used in multiple computers through web browsers or other web technologies. There are different Java technologies that are used to create web applications under the Java EE(Enterprise Edition) platform. There are many technologies available, however, there are only two Java technologies that will be discused in this course, and they are <a href="#servlets">Java Servlet</a> and <a href="#server-pages">JavaServer Pages.</a></p>
             </div>
 
             <div id="servlets">
                 <h3>Java Servlet</h3>
-                <p>Java Servlets are programs that handle HTTP requests and generate HTTP responses. This technology is hosted in a servlet container that provides the environment in which the servlet runs, and it also serves as a means of controlling the servlet. See the <a href="http://www.oracle.com/technetwork/java/whitepaper-135196.html">Java Servlet API</a> to know more about it.</p>
+                <p>Java Servlets are programs that handle HTTP requests and generate HTTP responses. These programs create dynamic web content. This technology is hosted in a servlet container that provides the environment in which the servlet runs, and it also serves as a means of controlling the servlet.</p>
+
+                <p>Servlets are preferrably used when web applications require a lot of processes and manipulations. See the <a href="http://www.oracle.com/technetwork/java/whitepaper-135196.html">Java Servlet API</a> to know more about it.</p>
 
                 <h4>Servlet Lifecycle</h4>
                 <p>This part of the discussion explains the lifecylce of a servlet, starting from its instantiation to destruction.</p>
@@ -84,7 +85,7 @@
                     </li>
                     <li>Service</li>
                     <p>After initialization, the <b>service()</b> method is invoked to handle the request of the clients. In this phase of the servlet lifecycle, it is actually possible to handle multiple requests and send responses.</p>
-                    
+
                     <li>Destruction
                         <p>The method <b>destroy()</b> is called to terminate the servlet.</p>
                     </li>
@@ -95,7 +96,9 @@
 
             <div id="server-pages">
                 <h3>JavaServer Pages</h3>
-                <p>JavaServer Pages (JSP) is a server-side programming technology that allows the developer to create dynamic web applications. JSP doesn't have a dedicated API as it can access Java's entire APIs. A JSP page's lifecycle is determined by the Java Servlet because a JSP page send requests like a servlet.</p>
+                <p>JavaServer Pages (JSP) is a server-side programming technology that allows the developer to create dynamic web applications. JSP does not have a dedicated API as it can access Java's entire APIs. A JavaServer page's lifecycle is determined by the Java Servlet because JSPs are converted into Java Servlets.</p>
+
+                <p>Tags are used in JSP to create container for Java codes. These tags allow to separate the Java codes from other components of the file such as HTML or an SQL query. JSP has a library dedicated for the collection of tags. This library is referred to JSP Standard Tag Library or JSTL. JSTL Unlike in Java Servlet, it is possible to create custom tags or user-defined tags within a JSP file. These custom</p>
             </div>
 
             <div class="references">
@@ -106,6 +109,7 @@
                     <li><a href="https://www.tutorialspoint.com/servlets/index.htm">Java Servlet</a></li>
                     <li><a href="http://www.oracle.com/technetwork/java/whitepaper-135196.html">Java Servlet API</a></li>
                     <li><a href="https://docs.oracle.com/javaee/5/tutorial/doc/bnagx.html">JavaServer Pages</a></li>
+                    <li><a href="https://www.tutorialspoint.com/jsp/jsp_standard_tag_library.htm">JSP Standard Tag Library</a></li>
                 </ul>
             </div>
         </div>
