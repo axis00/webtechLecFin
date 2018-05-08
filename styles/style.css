@@ -321,6 +321,9 @@ footer {
 
 }
 
+div#server-pages div#result{
+    background-color: white;
+}
 footer p {
     padding: 0;
     margin: 3px;

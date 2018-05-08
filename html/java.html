@@ -6,6 +6,30 @@
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
     <link rel="stylesheet" type="text/css" href="../styles/nav.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <script src="../scripts/jquery-3.2.1.min.js"></script>
+    <script>
+            $(document).ready(function() {
+                
+                
+            });
+            function submitPhp(){
+                var code = $("#codeIn").val();
+                console.log(code);
+                $.ajax({
+                        url: "http://phpfiddle.org/api/run/code/json",
+                        type: "POST",
+                        data: "code=" + encodeURIComponent(code),
+                        cache: false,
+                        dataType: "json",
+                        success: function(data) {
+                                if(!data.error){
+                                    $("#result").html(data.result);;
+                                }
+                        }
+                    });
+
+            }
+        </script>
 </head>
 
 
@@ -96,9 +120,47 @@
 
             <div id="server-pages">
                 <h3>JavaServer Pages</h3>
-                <p>JavaServer Pages (JSP) is a server-side programming technology that allows the developer to create dynamic web applications. JSP does not have a dedicated API as it can access Java's entire APIs. A JavaServer page's lifecycle is determined by the Java Servlet because JSPs are converted into Java Servlets.</p>
+                <p>JavaServer Pages (JSP) is a server-side programming technology that allows the developer to create both static and dynamic web content. JSP files have the extension of .jsp. JSP does not have a dedicated API as it can access Java's entire APIs. A JavaServer page's lifecycle is determined by the Java Servlet because JSPs are converted into Java Servlets.&gt;/p> &gt;p>Tags are used in JSP to create container for Java codes. These tags allow to separate the Java codes from other components of a JSP file. JSP has a library dedicated for the collection of tags. This library is referred to JSP Standard Tag Library or JSTL. The tags from this library can be categorized according to their functions. There are core tags, formatting tags, SQL tags, XML tags, JSTL functions. Unlike in Java Servlet, JSP allows users to create custom tags or user-defined tags within a JSP file.</p>
+                
+                <h4>JSP Page Directive</h4>
+                <p>There are different kinds of JSP directives that informs the web container on how to convert a JSP page to servlet. Among these types of directives, there is the page directives. A page directive defines the attribute of a JSP page. The syntax for specifying a page directive is:<b> &lt;%@page attrbute="value"&gt;</b>. Some examples of page directives are provided below.</p>
+                <textarea rows="5" cols="80" name="code" id="codeIn" class="codeArea PHP">
+&lt;%@ page contentType="text/html" pageEncoding="UTF-8" %&gt;
+&lt;%@ page info="Sample page directive"%&gt;
+&lt;%@page import="java.util.Date"%&gt;
+                </textarea>
+                
+                <p>Other than the page directive, there are also directives for tag library that starts with @taglib, and directives for including a file that starts with @include</p>
+                
+                <h4>Template</h4>
+                <p>Templates in JSP are used as a guide for the content's layout. This could be composed of any markup text, such as HTML. A sample of a JSP template is provided below.</p>
 
-                <p>Tags are used in JSP to create container for Java codes. These tags allow to separate the Java codes from other components of the file such as HTML or an SQL query. JSP has a library dedicated for the collection of tags. This library is referred to JSP Standard Tag Library or JSTL. JSTL Unlike in Java Servlet, it is possible to create custom tags or user-defined tags within a JSP file. These custom</p>
+                <textarea rows="18" cols="80" name="code" id="codeIn" class="codeArea PHP">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;JSP Sample Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;JSP Sample&lt;/h1&gt;
+    &lt;p&gt;This is an example of a JSP template.&lt;/p&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;%!
+        //Codes in Java are applied in this part
+    %&gt;
+    &lt;div class="footer"&gt;Sample JSP - 2018&lt;/div&gt;   
+&lt;/body&gt;
+&lt;/html&gt;
+        </textarea>
+                <p>Predefined templates are available online. Check <a href="https://docs.oracle.com/cd/E13218_01/wlp/docs70/jsp/templats.htm">WebLogic Portal's list of templates</a> that can be applied for different business processes.</p>
+                
+                <h4>JSP Comments</h4>
+                <p>Developers can include comments in their JSP files by using the following delimiter: <b>&lt;%--- ---%&gt;</b></p>
+                <textarea rows="2" cols="80" name="code" id="codeIn" class="codeArea PHP">
+&lt;%---This is a JSP Comment---%&gt;
+                </textarea>
+                Declarations can occur in any part of the file. Scriptlets, body of a method during translation time
             </div>
 
             <div class="references">
@@ -110,6 +172,8 @@
                     <li><a href="http://www.oracle.com/technetwork/java/whitepaper-135196.html">Java Servlet API</a></li>
                     <li><a href="https://docs.oracle.com/javaee/5/tutorial/doc/bnagx.html">JavaServer Pages</a></li>
                     <li><a href="https://www.tutorialspoint.com/jsp/jsp_standard_tag_library.htm">JSP Standard Tag Library</a></li>
+                    <li><a href="http://www.oracle.com/technetwork/java/index-jsp-135995.html">JSP Standard Tag Library</a></li>
+                    <li><a href="https://www.javatpoint.com/jsp-page-directive">JSP Page Directive</a></li>
                 </ul>
             </div>
         </div>
