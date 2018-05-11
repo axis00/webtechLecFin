@@ -11,9 +11,12 @@ var m_questionNumber = 0;
 var n_attemps = 0;
 var n_score = 0;
 var correctAnswer;
+var q_set = 0;
 
 function startQuiz(){
 
+    q_set = $("#startQuizBtn").attr('data-set');
+    
 	$("#startQuizBtn").hide();
 	$("#quizContainer").show();
 
@@ -59,8 +62,9 @@ function nextBtnAction(){
 		$.ajax({
 			type : "POST",
 			url : "flashcard.php",
-			data : {op : "check" , questionNumber : m_questionNumber , answer : ans},
+			data : {op : "check" , questionNumber : m_questionNumber , answer : ans, set : q_set},
 			success : function(data){
+                console.log(data);
 				if(data === 'true'){
 					handleCorrectAnswer();
 				}else{
@@ -89,8 +93,9 @@ function getNextQuestion() {
 	$.ajax({
 		type : "POST",
 		url : "flashcard.php",
-		data : {op : "next" ,questionNumber : m_questionNumber},
+		data : {op : "next" ,questionNumber : m_questionNumber, set : q_set},
 		success : function (data){
+            console.log(data);
 			var q = JSON.parse(data);
 			console.log(q);
 			if(q[0]){

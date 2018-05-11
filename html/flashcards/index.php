@@ -12,8 +12,6 @@
 </head>
 
 <body>
-    <h1>WebLex: Web Systems and Technologies</h1>
-
     <nav>
         <ul>
             <li><a href="../../index.html">Home</a></li>
@@ -54,7 +52,15 @@
     <div id="page-content">
         
         <div class="goBtnContainer">
-            <button id="startQuizBtn">GO</button>
+            <?php
+                if(isset($_GET['set'])){
+                    $set = $_GET['set'];
+                    echo "<button id='startQuizBtn' data-set = $set >GO</button>";
+                }else{
+                    echo "<p> please select a set </p>";
+                }
+                
+            ?>
         </div>
         <div id="quizContainer" style="display: none;">
             <table id="btnTable">
