@@ -4,7 +4,7 @@ USE `webtechlec`;
 --
 -- Host: localhost    Database: webtechlec
 -- ------------------------------------------------------
--- Server version	5.7.19
+-- Server version	5.7.14
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -48,6 +48,32 @@ LOCK TABLES `questions` WRITE;
 INSERT INTO `questions` VALUES (1,'mc','question1','correct','wrong','wrong','wrong','this is a description',1,1),(2,'mc','question2','answer2','still wrong','wrong','wrong','desc 2',1,2),(3,'mc','question2','answer2','still wrong','wrong','wrong','desc 2',1,3),(4,'text','answer with text','correct','','','','',1,4);
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `username` varchar(16) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  PRIMARY KEY (`username`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('user','$2y$10$B/tpjGPDm6D4sDW.7Kwh/ORk/nse9.SwalU6B5LaRUa6cnhAjpzwG','dev.mintgames@gmail.com');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -58,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-11 14:27:33
+-- Dump completed on 2018-05-12  1:44:24
