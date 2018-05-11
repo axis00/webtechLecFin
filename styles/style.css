@@ -333,12 +333,30 @@ ul {
     list-style: none;
 }
 
-#creators {
-    text-align: center;
-}
-
 img {
     width: auto;
     margin: auto;
+}
 
+.creator-container {
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+}
+
+.creator {
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.c-img {
+    grid-row-start: 1;
+    grid-row-end: 11;
+}
+
+.c-name {
+    grid-row-start: 12;
+    grid-row-end: 13;
 }
