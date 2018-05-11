@@ -52,7 +52,15 @@
     <div id="page-content">
         
         <div class="goBtnContainer">
-            <button id="startQuizBtn">GO</button>
+            <?php
+                if(isset($_GET['set'])){
+                    $set = $_GET['set'];
+                    echo "<button id='startQuizBtn' data-set = $set >GO</button>";
+                }else{
+                    echo "<p> please select a set </p>";
+                }
+                
+            ?>
         </div>
         <div id="quizContainer" style="display: none;">
             <table id="btnTable">
@@ -70,6 +78,16 @@
 
             </form>
             <div id="explanation">
+            </div>
+            <div id = "score-info">
+                <p>Merrits</p><p id="merrits"></p>
+                <p>Total Score</p><p id="score"></p>
+            </div>
+        </div>
+        <div id = "quiz-endcard" style="display:none">
+            <h2>You made it!</h2>
+            <div id = "end-score-info">
+                <p>Final Score</p><p id="score"></p>
             </div>
         </div>
     </div>

@@ -283,7 +283,7 @@ table p {
     text-align: left;
 }
 
-input {
+.search {
     text-align: left;
     font-size: 18px;
     background-color: white;

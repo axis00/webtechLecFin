@@ -9,11 +9,15 @@ $(document).ready(function(){
 
 var m_questionNumber = 0;
 var n_attemps = 0;
+var merrits = 3;
 var n_score = 0;
 var correctAnswer;
+var q_set = 0;
 
 function startQuiz(){
 
+    q_set = $("#startQuizBtn").attr('data-set');
+    
 	$("#startQuizBtn").hide();
 	$("#quizContainer").show();
 
@@ -59,8 +63,9 @@ function nextBtnAction(){
 		$.ajax({
 			type : "POST",
 			url : "flashcard.php",
-			data : {op : "check" , questionNumber : m_questionNumber , answer : ans},
+			data : {op : "check" , questionNumber : m_questionNumber , answer : ans, set : q_set},
 			success : function(data){
+                console.log(data);
 				if(data === 'true'){
 					handleCorrectAnswer();
 				}else{
@@ -74,12 +79,17 @@ function nextBtnAction(){
 
 function handleCorrectAnswer(){
 	n_attemps = 0;
+    n_score += merrits;
+    merrits = 3;
 	getNextQuestion();
+    $('#score-info #merrits').html(merrits);
+    $('#score-info #score').html(n_score);
 }
 
 function handleWrongAnswer(){
 	console.log("sir Montes is not happy");
-	n_attemps++;
+    if(merrits) merrits--;
+    $('#score-info #merrits').html(merrits);
 }
 
 function getNextQuestion() {
@@ -89,8 +99,9 @@ function getNextQuestion() {
 	$.ajax({
 		type : "POST",
 		url : "flashcard.php",
-		data : {op : "next" ,questionNumber : m_questionNumber},
+		data : {op : "next" ,questionNumber : m_questionNumber, set : q_set},
 		success : function (data){
+            console.log(data);
 			var q = JSON.parse(data);
 			console.log(q);
 			if(q[0]){
@@ -140,7 +151,9 @@ function getNextQuestion() {
 }
 
 function endFlahsCardQuiz(){
-	console.log("ended");
+    $("#quizContainer").hide();
+    $("#quiz-endcard").show();
+    $("#end-score-info #score").html(n_score);
 }
 
 function explainQuestion(){

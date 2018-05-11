@@ -8,23 +8,23 @@
 	$conn = mysqli_connect($url,$user,$pass,$db);
 
 
-	if(isset($_POST['op'])){
+	if(isset($_POST['op']) && isset($_POST['questionNumber']) && isset($_POST['set'])){
 		if($_POST['op'] == 'check'){
-			check($_POST['questionNumber'],$_POST['answer']);
+			check($_POST['questionNumber'],$_POST['answer'],$_POST['set']);
 		}
 
 		if($_POST['op'] == 'next'){
-			serveNextQuestion();
+			serveNextQuestion($_POST['set']);
 		}
 	}
 
-	function check($qNumber,$ans){
+	function check($qNumber,$ans,$set){
 
 		global $conn;
 
-		$sql = "SELECT answer FROM questions WHERE id = $qNumber LIMIT 1";
+		$sql = "SELECT answer FROM questions WHERE questionNumber = $qNumber AND q_set = $set LIMIT 1";
 		$res = $conn->query($sql);
-
+        
 		while($row = $res->fetch_array()){
 			if($row['answer'] == $ans){
 				echo 'true';
@@ -35,7 +35,7 @@
 
 	}
 
-	function serveNextQuestion(){
+	function serveNextQuestion($set){
 
 		global $conn;
 
@@ -43,7 +43,8 @@
 		
 			$questionNumber = $_POST['questionNumber'];
 
-			$sql = "SELECT * FROM questions WHERE id = $questionNumber LIMIT 1";
+            $sql = "SELECT * FROM questions WHERE questionNumber = $questionNumber AND q_set = $set LIMIT 1";
+
 
 			$res = $conn->query($sql);
 
