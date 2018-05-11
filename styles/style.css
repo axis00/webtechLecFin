@@ -348,15 +348,17 @@ img {
 
 .creator {
     display: grid;
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: 400px 1fr;
+    grid-gap: 20px;
 }
 
 .c-img {
-    grid-row-start: 1;
-    grid-row-end: 11;
+    margin: 0 auto;
+    width: 400px;
+    border: 1px solid #000;
+    border-radius: 100%;
 }
 
 .c-name {
-    grid-row-start: 12;
-    grid-row-end: 13;
+    text-align: center;
 }
