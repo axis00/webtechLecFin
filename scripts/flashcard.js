@@ -9,6 +9,7 @@ $(document).ready(function(){
 
 var m_questionNumber = 0;
 var n_attemps = 0;
+var merrits = 3;
 var n_score = 0;
 var correctAnswer;
 var q_set = 0;
@@ -78,12 +79,17 @@ function nextBtnAction(){
 
 function handleCorrectAnswer(){
 	n_attemps = 0;
+    n_score += merrits;
+    merrits = 3;
 	getNextQuestion();
+    $('#score-info #merrits').html(merrits);
+    $('#score-info #score').html(n_score);
 }
 
 function handleWrongAnswer(){
 	console.log("sir Montes is not happy");
-	n_attemps++;
+    if(merrits) merrits--;
+    $('#score-info #merrits').html(merrits);
 }
 
 function getNextQuestion() {
@@ -145,7 +151,9 @@ function getNextQuestion() {
 }
 
 function endFlahsCardQuiz(){
-	console.log("ended");
+    $("#quizContainer").hide();
+    $("#quiz-endcard").show();
+    $("#end-score-info #score").html(n_score);
 }
 
 function explainQuestion(){

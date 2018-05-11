@@ -79,6 +79,16 @@
             </form>
             <div id="explanation">
             </div>
+            <div id = "score-info">
+                <p>Merrits</p><p id="merrits"></p>
+                <p>Total Score</p><p id="score"></p>
+            </div>
+        </div>
+        <div id = "quiz-endcard" style="display:none">
+            <h2>You made it!</h2>
+            <div id = "end-score-info">
+                <p>Final Score</p><p id="score"></p>
+            </div>
         </div>
     </div>
     <footer>
