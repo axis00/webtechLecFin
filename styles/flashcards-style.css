@@ -9,7 +9,7 @@
 .goBtnContainer #startQuizBtn {
     font-family: sans-serif;
     background-color: #1c1129;
-    border-radius: 50px;
+    border-radius: 5px;
     padding: 25px 90px;
     color: #fff;
     font-size: 2em;
@@ -37,6 +37,7 @@
 
 #btnTable {
     margin: auto;
+    margin-top: 10vh;
 }
 
 table,
@@ -47,7 +48,7 @@ td {
 
 .quizButtons {
     margin: 0 50% 0 50%;
-    border-radius: 25px;
+    border-radius: 5px;
     font-family: sans-serif;
     background-color: #1c1129;
     padding: 25px 0;
@@ -85,4 +86,26 @@ td {
 
 .radButtons {
     margin-left: 5%;
+    visibility: hidden;
+}
+
+.radButtons ~ label {
+    margin: 2vh;
+    padding: 1vh;
+    border-radius: 5px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.radButtons ~ label:hover {
+    border-bottom: 2px solid #18243F;
+}
+
+.radButtons:checked + label{
+    background: linear-gradient(to bottom, #18243F 0%, #301c30 100%);
+    color: white;
+}
+
+#mini-hero-banner {
+    height: 10vh !important;
 }
