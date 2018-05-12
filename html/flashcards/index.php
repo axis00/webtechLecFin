@@ -26,7 +26,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="../../index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li>
                 <div class="dropdown">
                     <div class="dropdown-button"><a href="../../html/finals.html">Server Side Scripting</a>
@@ -69,15 +69,16 @@
                     $set = $_GET['set'];
                     echo "<button id='startQuizBtn' data-set = $set >GO</button>";
                 }else{
-                    echo "<p> please select a set </p>";
+                    header("Location: setselect.html");
+                    die();
                 }
                 
             ?>
         </div>
         <div id="quizContainer" style="display: none;">
             <div id = "score-info">
-                <span>Merrits</span><span id="merrits"></span>
-                <span>Total Score</span><span id="score"></span>
+                <span>Merrits : </span><span id="merrits"></span>
+                <span>Total Score : </span><span id="score"></span>
             </div>
             <p id="question"></p>
             <form id="answers">
