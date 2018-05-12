@@ -52,7 +52,10 @@
             <div class="topics-nav">
                 <ul>
                     <li><a href="#php">About PHP</a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="#form-handling">Form Handling</a></li>
+                    <li><a href="#file-upload">File Upload Handling</a></li>
+                    <li><a href="../includes/phpeditor.html" >PHP Editor</a></li>
+                    <li><a href="#session-hanlding">Session Handling</a></li>
                 </ul>
             </div>
         </div>
@@ -96,10 +99,13 @@
     $_var = 25; // variable name can also start with an underscore
 ?&gt;
                 </textarea>
+                
                 <p>Variables are declared with the '$' symbol and names can start with a big or small letter or an underscore. They cannot start with numbers or other characters.</p>
                 <p>PHP, like other languages, also have operators: Arithmetic, assignment, comparison, and logical operators, to name a few. You could look at all PHP Operators <a href="http://php.net/manual/en/language.operators.php"> here</a>.</p>
                 
-                <h3>Form Handling</h3>
+                <p>You could try out the codes using our PHP editor.</p><a href="../includes/phpeditor.html" id="button-container">PHP Editor</a>
+                
+                <h3 id="form-handling">Form Handling</h3>
                 <p>PHP can be used to handle form requests from HTML files.</p>
                 <textarea rows="9" cols="80" name="code" id="codeIn" class="codeArea PHP">
 &lt;html&gt;
@@ -127,7 +133,7 @@
                 <p>The PHP file above should display the text, and the inputted name from the HTML file.</p>
                 <p>You can also use the HTTP GET method, however, when dealing with important data (e.g. passwords) that should be invisible to end-users, use the HTTP POST method.</p>
                 
-                <h3>File Upload Handling</h3>
+                <h3 id="file-upload">File Upload Handling</h3>
                 <p>To handle file uploads, the use of the form tag in the HTML file is needed. One needs to specify the action attribute, which is a PHP file, and the method, which should be POST. An 'enctype' attibute should also be specified in the form tag. The attribute should be set to "multipart/form-data", this allows different file uploads.</p>
                 <textarea rows="11" cols="80" name="code" id="codeIn" class="codeArea PHP">
 &lt;html&gt;
@@ -139,7 +145,7 @@
     &lt;/body&gt;
 &lt;/html&gt;
                 </textarea>
-                <p>In the PHP file, the '$_FILES' variable will be used inorder to store the uploaded file information.</p>
+                <p>In the PHP file, the '$_FILES' global variable will be used inorder to store the uploaded file information.</p>
                 <textarea rows="22" cols="80" name="code" id="codeIn" class="codeArea PHP">
 // fileuplad.php
                     
@@ -162,7 +168,19 @@
                 </textarea>
                 <p>The function 'move_uploaded_file(file,newloc)' moves the uploaded file (file) to a new location (newloc).</p>
                 
-                <p></p>
+                <h3 id="session-handling">Session Handling</h3>
+                <p>Session handling allows the server to store user information used across the multiple pages of a web application. These include the requests made. Usually, sessions are implemented in web applications that require the user to login. These sessions last until the user closes the browser or logs out from the web application.</p>
+                <textarea rows="9" cols="80" name="code" id="codeIn" class="codeArea PHP">
+&lt;html&gt;
+    &lt;?php
+            session_start();
+            $_SESSION["username"] = "";   
+    ?&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </textarea>
+                <p>The 'session_start()' function starts the tracking of the session. Session variables could also be set using the '$_SESSION' global variable. '$_SESSION[]' put the variable name inside the square brackets. These variables are only avaialable while the session is active.</p>
             </div>
             <div id="references">
                 <h3>References</h3>
@@ -171,6 +189,7 @@
                     <li><a href="http://php.net/manual/en/history.php.php">History of PHP</a></li>
                     <li><a href="https://www.w3schools.com/php/php_forms.asp">Form Handling</a></li>
                     <li><a href="http://php.net/manual/en/features.file-upload.post-method.php">File Upload</a></li>
+                    <li><a href="http://php.net/manual/en/session.examples.basic.php">Session Handling</a></li>
                 </ul>
             </div>
         </div>
