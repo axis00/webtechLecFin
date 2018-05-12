@@ -53,10 +53,10 @@ function nextBtnAction(){
 	var ans;
 	$("#explanation").hide();
 
-	if($("input[name=user-answer]:checked").length > 0){
-		ans = $("input[name=user-answer]:checked").val();
+	if($("input[type=text]").val()){
+		ans = $("input[type=text]").val().toLowerCase();
 	}else{
-		ans = $("input[name=user-answer]").val().toLowerCase();
+		ans = $("input[name=user-answer]:checked").val();
 	}
 
     console.log(ans);
@@ -157,6 +157,10 @@ function endFlahsCardQuiz(){
     $("#quizContainer").hide();
     $("#quiz-endcard").show();
     $("#end-score-info #score").html(n_score);
+
+    $("#endScore").attr('value',n_score);
+    $("#endSet").attr('value',q_set);
+
 }
 
 function explainQuestion(){

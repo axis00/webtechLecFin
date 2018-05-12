@@ -42,7 +42,7 @@
             <li>
                 <div class="dropdown">
                     <div class="dropdown-button">
-                        <a href="../../html/flashcards/index.html">Review</a>
+                        <a href="../../html/flashcards/">Review</a>
                     </div>
                 </div>
             </li>
@@ -67,7 +67,22 @@
             <?php
                 if(isset($_GET['set'])){
                     $set = $_GET['set'];
-                    echo "<button id='startQuizBtn' data-set = $set >GO</button>";
+
+                    require "../../includes/connectToDb.php";
+
+                    $stmt = $conn->prepare("SELECT * FROM quiz where q_user = ? and q_set = ?");
+                    $stmt->bind_param("sd",$_SESSION['user'],$set);
+                    $stmt->execute();
+
+                    $res = $stmt->get_result();
+
+                    if($res->num_rows > 0){
+                        $score = $res->fetch_assoc()['score'];
+                        echo "<h2>You've Already done this quiz! Your score was $score</h2>";
+                    }else{
+                        echo "<button id='startQuizBtn' data-set = $set >GO</button>";
+                    }
+                   
                 }else{
                     header("Location: setselect.html");
                     die();
@@ -102,6 +117,11 @@
             <div id = "end-score-info">
                 <p>Final Score</p><p id="score"></p>
             </div>
+            <form action="end.php" method="POST">
+                <input type="hidden" name = "score" id = "endScore">
+                <input type="hidden" name="set" id = "endSet">
+                <input type="submit" value = "Save">
+            </form>
         </div>
     </div>
     <footer>
