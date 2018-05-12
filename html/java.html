@@ -8,28 +8,29 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="../scripts/jquery-3.2.1.min.js"></script>
     <script>
-            $(document).ready(function() {
-                
-                
-            });
-            function submitPhp(){
-                var code = $("#codeIn").val();
-                console.log(code);
-                $.ajax({
-                        url: "http://phpfiddle.org/api/run/code/json",
-                        type: "POST",
-                        data: "code=" + encodeURIComponent(code),
-                        cache: false,
-                        dataType: "json",
-                        success: function(data) {
-                                if(!data.error){
-                                    $("#result").html(data.result);;
-                                }
-                        }
-                    });
+        $(document).ready(function() {
 
-            }
-        </script>
+
+        });
+
+        function submitPhp() {
+            var code = $("#codeIn").val();
+            console.log(code);
+            $.ajax({
+                url: "http://phpfiddle.org/api/run/code/json",
+                type: "POST",
+                data: "code=" + encodeURIComponent(code),
+                cache: false,
+                dataType: "json",
+                success: function(data) {
+                    if (!data.error) {
+                        $("#result").html(data.result);;
+                    }
+                }
+            });
+
+        }
+    </script>
 </head>
 
 
@@ -52,7 +53,7 @@
             <li>
                 <div class="dropdown">
                     <div class="dropdown-button">
-                        <a href="../html/flashcards/index.html">Review</a>
+                        <a href="../html/flashcards/index.php">Review</a>
                     </div>
                 </div>
             </li>
@@ -118,7 +119,7 @@
             <div id="server-pages">
                 <h3>JavaServer Pages</h3>
                 <p>JavaServer Pages (JSP) is a server-side programming technology that allows the developer to create both static and dynamic web content. JSP files have the extension of .jsp. JSP does not have a dedicated API as it can access Java's entire APIs. A JavaServer page's lifecycle is determined by the Java Servlet because JSPs are converted into Java Servlets.&gt;/p> &gt;p>Tags are used in JSP to create container for Java codes. These tags allow to separate the Java codes from other components of a JSP file. JSP has a library dedicated for the collection of tags. This library is referred to JSP Standard Tag Library or JSTL. The tags from this library can be categorized according to their functions. There are core tags, formatting tags, SQL tags, XML tags, JSTL functions. Unlike in Java Servlet, JSP allows users to create custom tags or user-defined tags within a JSP file.</p>
-                
+
                 <h4>JSP Page Directive</h4>
                 <p>There are different kinds of JSP directives that informs the web container on how to convert a JSP page to servlet. Among these types of directives, there is the page directives. A page directive defines the attribute of a JSP page. The syntax for specifying a page directive is:<b> &lt;%@page attrbute="value"&gt;</b>. Some examples of page directives are provided below.</p>
                 <textarea rows="5" cols="80" name="code" id="codeIn" class="codeArea PHP">
@@ -126,9 +127,9 @@
 &lt;%@ page info="Sample page directive"%&gt;
 &lt;%@page import="java.util.Date"%&gt;
                 </textarea>
-                
+
                 <p>Other than the page directive, there are also directives for tag library that starts with @taglib, and directives for including a file that starts with @include</p>
-                
+
                 <h4>Template</h4>
                 <p>Templates in JSP are used as a guide for the content's layout. This could be composed of any markup text, such as HTML. A sample of a JSP template is provided below.</p>
 
@@ -151,13 +152,57 @@
 &lt;/html&gt;
         </textarea>
                 <p>Predefined templates are available online. Check <a href="https://docs.oracle.com/cd/E13218_01/wlp/docs70/jsp/templats.htm">WebLogic Portal's list of templates</a> that can be applied for different business processes.</p>
-                
+
                 <h4>JSP Comments</h4>
                 <p>Developers can include comments in their JSP files by using the following delimiter: <b>&lt;%--- ---%&gt;</b></p>
                 <textarea rows="2" cols="80" name="code" id="codeIn" class="codeArea PHP">
 &lt;%---This is a JSP Comment---%&gt;
+                </textarea> 
+                <p>Declarations can occur in any part of the file. Scriptlets, body of a method during translation time</p>
+                
+                <h4 id="expression-language">Expression Language (EL)</h4>
+                <p>Expression Languag (EL) allows access to the different components of JavaBeans. EL allows the user to set and get evaluations of expressions, and invoke methods.</p>
+                <p>Syntax of EL:</p>
+                <textarea rows="2" cols="80" name="code" id="codeIn" class="codeArea PHP">
+${expression}
                 </textarea>
-                Declarations can occur in any part of the file. Scriptlets, body of a method during translation time
+                <p>Whatever is set inside the curly braces get exaluated during the website's run time.</p>
+                <p>EL also allows the developer to use predefined objects. There are three types of implicit objects: maps for single set values (param, paramValues, header, headerValues, initParam, cookie), maps for scoped variables (applicationScope, sessionScope, requestScope), and page context (pageContext)</p>
+                <ul>
+                    <li>param, paramValues</li>
+                    <p>'param' stores the first value for a request parameter, while, 'paramValue' stores a String array that contains all the values for a request parameter.</p>
+                    <li>header, headerValues</li>
+                    <p>'header' stores the first value for a request header, and 'headerValues' stores all the values for a request header in an array.</p>
+                    <li>cookie</li>
+                    <p>'cookie' is used to access cookies.</p>
+                    <li>initParam</li>
+                    <p>'initParam' is used to access initialization parameters. </p>
+                    <li>applicationScope</li>
+                    <p>'applicationScope is used to get application level attributes.</p>
+                    <li>sessionScope</li>
+                    <p>'sessionScope' maps session-scoped variable names to their values.</p>
+                    <li>requestScope</li>
+                    <p>'requestScope' maps request-scoped variable names to their values.</p>
+                </ul>
+                
+                <h4>JSP Custom Elements</h4>
+                <p>Custom tags are user defined elements. When the JSP page is translated into a servlet, the tag is converted into a tag handler.</p>
+                
+                <h4>Scriptlets</h4>
+                <p>Scriplets are Java codes embedded in JSP pages. Here is the syntax:</p>
+                <textarea rows="5" cols="80" name="code" id="codeIn" class="codeArea PHP">
+&lt;%
+    //java codes
+%&gt;
+                </textarea>
+                
+                <h4>Scriptlet Expressions</h4>
+                <p>Outputs the results of an expression to the JSP page. Here is the syntax:</p>
+                <textarea rows="5" cols="80" name="code" id="codeIn" class="codeArea PHP">
+&lt;%=
+    //codes
+%&gt;
+                </textarea>
             </div>
 
             <div class="references">
@@ -171,6 +216,8 @@
                     <li><a href="https://www.tutorialspoint.com/jsp/jsp_standard_tag_library.htm">JSP Standard Tag Library</a></li>
                     <li><a href="http://www.oracle.com/technetwork/java/index-jsp-135995.html">JSP Standard Tag Library</a></li>
                     <li><a href="https://www.javatpoint.com/jsp-page-directive">JSP Page Directive</a></li>
+                    <li><a href="https://www.tutorialspoint.com/jsp/jsp_expression_language.htm">JSP Expression Languages</a></li>
+                    <li><a href="https://docs.oracle.com/javaee/5/tutorial/doc/bnaou.html">Scriptlets and Expressions</a></li>
                 </ul>
             </div>
         </div>

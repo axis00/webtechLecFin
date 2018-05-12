@@ -1,12 +1,6 @@
 <?php
 
-	$url = 'localhost';
-	$user = 'root';
-	$pass = '';
-	$db = 'webtechlec';
-
-	$conn = mysqli_connect($url,$user,$pass,$db);
-
+	require "../../includes/connectToDb.php";
 
 	if(isset($_POST['op']) && isset($_POST['questionNumber']) && isset($_POST['set'])){
 		if($_POST['op'] == 'check'){
