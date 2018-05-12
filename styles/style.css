@@ -267,7 +267,6 @@ td p {
 
 .content {
     width: 80%;
-    height: 80%;
     margin: 30px auto 0px;
 }
 
@@ -313,14 +312,15 @@ table caption {
 
 
 footer {
-    position: fixed;
+    position: static;
     width: 100%;
     bottom: 0;
     left: 0;
     text-align: center;
     color: white;
     background: #4a344e;
-
+    z-index: 999999;
+    opacity: .9999;
 }
 
 div#server-pages div#result{
