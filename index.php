@@ -20,7 +20,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li>
                 <div class="dropdown">
                     <div class="dropdown-button"><a href="./html/finals.html">Server Side Scripting</a>
@@ -42,8 +42,19 @@
             </li>
             <li><a href="./html/glossaryv2.html">Glossary</a></li>
             <li><a href="./html/about.html">About</a></li>
-            <li><a href="./login.php">Login</a></li>
-            <li><a href="./register.php">Register</a></li>
+
+            <?php
+
+                session_start();
+
+                if(isset($_SESSION['user'])){
+                    echo '<li style = "color : rgb(178, 80, 44)" ><a href="./logout.php">Logout</a></li>';
+                }else{
+                    echo '<li><a href="./login.php">Login</a></li>';
+                    echo  '<li><a href="./register.php">Register</a></li>';
+                }
+
+            ?>
         </ul>
     </nav>
 
