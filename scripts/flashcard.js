@@ -51,6 +51,7 @@ function showChoices(arr){
 function nextBtnAction(){
 
 	var ans;
+	$("#explanation").hide();
 
 	if($("input[name=user-answer]:checked").length > 0){
 		ans = $("input[name=user-answer]:checked").val();
@@ -90,7 +91,6 @@ function handleCorrectAnswer(){
 }
 
 function handleWrongAnswer(){
-	console.log("sir Montes is not happy");
     if(merrits) merrits--;
     $('#score-info #merrits').html(merrits);
 }

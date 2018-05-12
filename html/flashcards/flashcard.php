@@ -20,7 +20,7 @@
 		$res = $conn->query($sql);
         
 		while($row = $res->fetch_array()){
-			if($row['answer'] == $ans){
+			if(strtolower($row['answer']) == $ans){
 				echo 'true';
 			}else{
 				echo 'false';
