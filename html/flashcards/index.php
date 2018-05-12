@@ -78,7 +78,7 @@
 
                     if($res->num_rows > 0){
                         $score = $res->fetch_assoc()['score'];
-                        echo "<h2>You've Already done this quiz! Your score was $score</h2>";
+                        echo "<h2>You've already done this quiz! Your score was $score</h2>";
                     }else{
                         echo "<button id='startQuizBtn' data-set = $set >GO</button>";
                     }
