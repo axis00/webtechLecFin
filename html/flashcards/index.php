@@ -1,3 +1,15 @@
+<?php
+
+    session_start();
+
+    if(!isset($_SESSION['user'])){
+        header("Location: /login.php");
+        die();
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +26,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="../../index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li>
                 <div class="dropdown">
                     <div class="dropdown-button"><a href="../../html/finals.html">Server Side Scripting</a>
@@ -57,12 +69,23 @@
                     $set = $_GET['set'];
                     echo "<button id='startQuizBtn' data-set = $set >GO</button>";
                 }else{
-                    echo "<p> please select a set </p>";
+                    header("Location: setselect.html");
+                    die();
                 }
                 
             ?>
         </div>
         <div id="quizContainer" style="display: none;">
+            <div id = "score-info">
+                <span>Merrits : </span><span id="merrits"></span>
+                <span>Total Score : </span><span id="score"></span>
+            </div>
+            <p id="question"></p>
+            <form id="answers">
+
+            </form>
+            <div id="explanation">
+            </div>
             <table id="btnTable">
                 <tr>
                     <td>
@@ -73,16 +96,6 @@
                     </td>
                 </tr>
             </table>
-            <p id="question"></p>
-            <form id="answers">
-
-            </form>
-            <div id="explanation">
-            </div>
-            <div id = "score-info">
-                <p>Merrits</p><p id="merrits"></p>
-                <p>Total Score</p><p id="score"></p>
-            </div>
         </div>
         <div id = "quiz-endcard" style="display:none">
             <h2>You made it!</h2>

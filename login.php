@@ -2,7 +2,7 @@
 	session_start();
 
 	if(isset($_SESSION['user'])){
-		header("Location: /");
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
 		die();
 	}
 
@@ -53,7 +53,7 @@
     <body>
         <nav>
             <ul>
-                <li><a href="./index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li>
                     <div class="dropdown">
                         <div class="dropdown-button"><a href="./html/finals.html">Server Side Scripting</a>

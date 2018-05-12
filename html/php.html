@@ -12,7 +12,7 @@
 <body>
    <nav>
         <ul>
-            <li><a href="../index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li>
                 <div class="dropdown">
                     <div class="dropdown-button"><a href="../html/finals.html">Server Side Scripting</a>
@@ -111,10 +111,11 @@
 &lt;/html&gt;
                 </textarea>
                 <p>Here is an example of an HTML file with a form. When the submit button has been pressed, the data is sent to a file addressed in the action attribute of the form tag. The data is sent with an HTTP POST method.</p>
-                <textarea rows="10" cols="80" name="code" id="codeIn" class="codeArea PHP">
+                <textarea rows="12" cols="80" name="code" id="codeIn" class="codeArea PHP">
 // greet.php
+                    
 &lt;html&gt;
-    &lt;body&gt;
+    &lt;body&gt; 
        Welcome,
         &lt;?php
             echo $_POST["name"];
@@ -122,13 +123,51 @@
     &lt;/body&gt;
 &lt;/html&gt;
                 </textarea>
-                <p></p>
+                <p>The PHP file above should display the text, and the inputted name from the HTML file.</p>
+                <p>You can also use the HTTP GET method, however, when dealing with important data (e.g. passwords) that should be invisible to end-users, use the HTTP POST method.</p>
+                
+                <h3>File Upload Handling</h3>
+                <p>To handle file uploads, the use of the form tag in the HTML file is needed. One needs to specify the action attribute, which is a PHP file, and the method, which should be POST. An 'enctype' attibute should also be specified in the form tag. The attribute should be set to "multipart/form-data", this allows different file uploads.</p>
+                <textarea rows="11" cols="80" name="code" id="codeIn" class="codeArea PHP">
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;form action="fileupload.php" method="post" enctype="multipart/form-data"&gt;
+            &lt;p&gt;Upload: &lt;/p&gt; &lt;input type="file" name="picture"&gt;
+            &lt;input type="submit" value="Upload" name="upload"&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </textarea>
+                <p>In the PHP file, the '$_FILES' variable will be used inorder to store the uploaded file information.</p>
+                <textarea rows="22" cols="80" name="code" id="codeIn" class="codeArea PHP">
+// fileuplad.php
+                    
+&lt;html&gt;
+    &lt;body&gt; 
+        &lt;?php
+            $file_name = $_FILES["picture"]["name"]; //holds the file name
+            $file_size = $_FILES["picture"]["size"]; //holds the file size
+                    
+            $temp = $_FILES["picture"]["tmp_name"]; //holds the temporary file name 
+            $destination = $_SERVER["DOCUMENT_ROOT"] . / "/images/$file_name"; //where the file would be stored in the server
+            
+            move_uploaded_file($temp, $destination);        
+                    
+            echo "Your picture, $file_name , has been uploaded."
+            echo "Its file size: $file_size byte/s"
+        ?&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </textarea>
+                <p>The function 'move_uploaded_file(file,newloc)' moves the uploaded file (file) to a new location (newloc).</p>
             </div>
             <div id="references">
                 <h3>References</h3>
                 <ul>
                     <li><a href="http://www.php.net/">About PHP</a></li>
                     <li><a href="http://php.net/manual/en/history.php.php">History of PHP</a></li>
+                    <li><a href="https://www.w3schools.com/php/php_forms.asp">Form Handling</a></li>
+                    <li><a href="http://php.net/manual/en/features.file-upload.post-method.php">File Upload</a></li>
                 </ul>
             </div>
         </div>
