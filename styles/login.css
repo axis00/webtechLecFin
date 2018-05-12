@@ -1,0 +1,26 @@
+* { 
+    box-sizing: border-box;
+}
+
+#login-container {
+    width: 80%;
+    margin: 5% auto;
+    background-color: white;
+    padding: 50px;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    width: 20%;
+    padding: 5px;
+}
+
+input[type=submit] {
+    border: 1px solid orange;
+    padding: 8px;
+    width: 20%;
+    margin-top: 20px;
+    background-color: #4c214f;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
