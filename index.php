@@ -78,7 +78,7 @@
         <h2>Welcome to WebLex, a collection of informative lectures about the web.</h2>
         <ul>
             <li>Get ready to learn more about the web and its fundamentals by accessing the "<a href="./html/topics.html">Courses</a>" option in the navigation bar.</li>
-            <li>Test your knowledge and understanding of the different topics discussed by accessing the "<a href="./html/flashcards/index.html">Review"</a> option in the navigation bar.</li>
+            <li>Test your knowledge and understanding of the different topics discussed by accessing the "<a href="./html/flashcards/index.php">Review"</a> option in the navigation bar.</li>
             <li>Find important and relevant terms from the "<a href="./html/glossary.html">Glossary</a>" section of the navigation bar.</li>
             <li>Learn more about the website from the "<a href="./html/about.html">About</a>" section of the navigation bar.</li>
         </ul>

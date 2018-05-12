@@ -81,6 +81,7 @@
                         echo "<h2 class='taken'>You've Already done this quiz! Your score was $score</h2>";
                         echo "<button id='startQuizBtn' data-set = $set >Take Anyway</button>";
                         echo "<p class='taken'>*this will not be saved*</p>";
+
                     }else{
                         echo "<button id='startQuizBtn' data-set = $set >GO</button>";
                     }
