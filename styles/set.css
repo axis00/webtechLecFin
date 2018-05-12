@@ -1,0 +1,17 @@
+#set-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    font-size: 6em;
+    text-align: center;
+    grid-gap: 2%;
+    width: 90%;
+    margin: 5% auto;
+}
+
+.set {
+    background-color: #4c214f;
+    border: 1px solid orange;
+    padding-bottom: 10px;
+    color: white;
+    text-decoration: none;
+}

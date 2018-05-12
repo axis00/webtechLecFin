@@ -157,9 +157,9 @@
                 <p>Developers can include comments in their JSP files by using the following delimiter: <b>&lt;%--- ---%&gt;</b></p>
                 <textarea rows="2" cols="80" name="code" id="codeIn" class="codeArea PHP">
 &lt;%---This is a JSP Comment---%&gt;
-                </textarea> 
+                </textarea>
                 <p>Declarations can occur in any part of the file. Scriptlets, body of a method during translation time</p>
-                
+
                 <h4 id="expression-language">Expression Language (EL)</h4>
                 <p>Expression Languag (EL) allows access to the different components of JavaBeans. EL allows the user to set and get evaluations of expressions, and invoke methods.</p>
                 <p>Syntax of EL:</p>
@@ -184,27 +184,53 @@ ${expression}
                     <li>requestScope</li>
                     <p>'requestScope' maps request-scoped variable names to their values.</p>
                 </ul>
-                
+
                 <h4>JSP Custom Elements</h4>
                 <p>Custom tags are user defined elements. When the JSP page is translated into a servlet, the tag is converted into a tag handler.</p>
-                
+
                 <h4>Scriptlets</h4>
                 <p>Scriplets are Java codes embedded in JSP pages. Here is the syntax:</p>
-                <textarea rows="5" cols="80" name="code" id="codeIn" class="codeArea PHP">
+                <textarea rows="4" cols="80" name="code" id="codeIn" class="codeArea PHP">
 &lt;%
     //java codes
 %&gt;
                 </textarea>
-                
+
                 <h4>Scriptlet Expressions</h4>
                 <p>Outputs the results of an expression to the JSP page. Here is the syntax:</p>
-                <textarea rows="5" cols="80" name="code" id="codeIn" class="codeArea PHP">
+                <textarea rows="4" cols="80" name="code" id="codeIn" class="codeArea PHP">
 &lt;%=
     //codes
 %&gt;
                 </textarea>
-            </div>
 
+                <h4>JSP Requests</h4>
+                <p>Because JSP is a server-side scripting language, it can handle requests from HTML forms.</p>
+                <textarea rows="9" cols="80" id="codeIn" class="codeArea PHP">
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;form action="greet.jsp" method="post"&gt;
+                &lt;p&gt;Name:&lt;/p&gt; &lt;input type="text" name="name"&gt;
+                &lt;input type="submit"&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </textarea>
+                <p>Above is an example of an HTML file with a form tag. The form handler is specified as the file 'greet.jsp' with the HTML POST method.</p>
+                <textarea rows="13" cols="80" id="codeIn" class="codeArea PHP">
+// greet.jsp
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;%   
+           String name = request.getParameter("name");  //gets the inputted name from the HTML file
+           out.print("Hello, " + name + "!");  // prints out "Hello, (inputted name)!"
+        %&gt;  
+    &lt;/body&gt;
+&lt;/html&gt;
+                </textarea>
+                <p>Aside from the HTML POST method to process requests, the HTML GET method could also be used, however, when dealing with sensitive data, it is best to use the HTML POST method.</p>
+            </div>
+                
             <div class="references">
                 <h3>References</h3>
                 <ul>
