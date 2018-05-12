@@ -76,15 +76,13 @@
                 <h3>Injection</h3>
                 <p>This web security threat is ranked as number one threat in OWASP Top 10 for 2017. It is one of the most common and threatening security attack today. An injection attack happens when a malicious input is entered into a web application. This input can be a command, query, or malware. Once this input is injected in the program, the interpreter may change the behavior of the program. These attacks could result to having an access and/or any modification to the website’s database which can have a negative impact on businesses and organizations. </p>
 
-                <p>The most common type among injection attacks is SQL Injection. SQL queries can perform any possible action on the database. An SQL Injection is prominent in database-driven application, and it occurs whenever an attacker inputs a malicious SQL code to breach the login forms, and to gain access to accounts. The attacker will first have a set of trial and error SQL codes and values to check how an application responds to them. After observing the results of inputs on the website, the attacker will come up with a plan to attempt an attack. The attacker will provide a value that will be a part of an argument in the SQL query. The input value will be interpreted as a component of the SQL command. </p>
-
-                <p>
-                    It is unfortunate that there are so many successful SQL injection attacks when it’s prevention can be easily implemented. The cause of SQL injections can be mitigated by doing one of two simple things: either web developers stop using dynamic queries or prevent user input from changing the logic of database queries. For the latter, a developer has multiple options to make the queries safe. One of the simplest ones is to use prepared statements that will treat the whole user input as a string. As stated before, the inputs ‘1’=’1 can affect the logic of a query. But by using prepared statements, The query will look for a username with the exact same characters as the user input. There are many more mitigation techniques like the use of stored procedures, whitelist input validation, and escaping all user supplied input, but the simplest one that all developers should practice is the use of prepared statements.
-                </p>
+                <p>The most common type among injection attacks is SQL Injection. Some SQL queries can be entered in website's input field. This queries will be interpreted if the developer did not use prepared statements. If this kind of attack is successful, the hacker can then gain access to the website's database.</p>
             </div>
 
             <div id="broken">
                 <h3>Broken Authentication</h3>
+                
+
                 <p>
                     An attack caused by bad implementation of the authentication and/or session management of a web application is considered as a broken authentication. When the authentication and session management aren’t handled or implemented properly, attackers can gain access to passwords and/or session tokens. They could also have access to a user’s data in his/her account which could potentially lead to violation of privacy.
 
@@ -94,15 +92,6 @@
                     There are multiple example and kinds of attack on authentication and cases of Broken Authentication. A new kind of attack on authentication is Credential Stuffing. Credential Stuffing is a kind of brute force where an attacker with access to leaked credentials will try to match the credentials to an existing account. The attacker will then have access to the said account and do as the attacker pleases. OWASP sited a reason why authentication attacks commonly occur is because websites rely purely on passwords as authentication to access an account. This can be a reason why Credential Stuffing is common. This kind of attack can be prevented if websites don’t purely rely on passwords.
                 </p>
 
-                <p>
-                    Incorrect application of session timeouts or the lack of it is also an example of Broken Authentication. The most popular example for this is forgetting to properly logout an account and immediately closing the browser. Without proper session handling, another person can use the same browser and have access of the previous user’s account.
-                </p>
-
-                <p>
-                    Fortunately, attacks on authentication and cases of Broken Authentication can be dealt with almost all of the if not all the time. An example for mitigating authentication attacks is adding an additional layer of protection for accounts. A common way how some sites do this is through Multi-Factor Authentication. This is usually done by sending a confirmation code to a personal device of the registered user before the sites grant access to the account.
-                </p>
-
-                </p>
             </div>
             <div id="xss">
                 <h3>Cross-Site Scripting</h3>
@@ -111,10 +100,6 @@
                 <img src="xss.png ">
                 <p>An example of this attack is the persistent XSS. This happens when a malicious script is stored in the server by posting comments, forum posts, or other input fields. Another example is the reflected XSS, where scripts are indicated in a URL.</p>
 
-                <p>
-                    Cross-Site Scripting attacks can be mitigated by means of HTML Entity Encoding, HTML Attribute Encoding, URL Encoding, JavaScript Encoding, and CSS Hex Encoding. Before placing untrusted data in your HTML, escape special characters such as &,
-                    &gt;,&lt;, “, ‘, /. When getting inputs from your users, make sure to also escape the inputted data with the &#xHH format before inserting it to your HTML attributes. Using URL Encoding or Percent Encoding can be used to encode parameter values. Using a library that can parse and clean HTML text can also be used to mitigate these attacks.
-                </p>
             </div>
             <div id="references ">
                 <h3>References</h3>
