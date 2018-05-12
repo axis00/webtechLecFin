@@ -359,4 +359,20 @@ img {
 .c-name {
     grid-row-start: 12;
     grid-row-end: 13;
+    width: 30%;
+    margin: auto;
+}
+
+.c-img img{
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+#about-content p{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
 }
