@@ -384,3 +384,16 @@ textarea{
     margin: auto;
     display: block
 }
+
+#button-container {
+    padding: 1vh;
+    background-color: #442958;
+    text-align: center;
+    border-radius: 10vh;
+    color: #ffffff;
+    margin: 1vh;
+}
+
+#button-container:hover {
+    background: linear-gradient(to left, #140c1f 0%, #2f142f 100%);
+}
