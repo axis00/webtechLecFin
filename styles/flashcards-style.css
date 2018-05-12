@@ -28,6 +28,11 @@
     border-color: #1c1129;
 }
 
+.taken{
+    margin: auto;
+    text-align: center;
+}
+
 #question{
     font-size: 2em;
 }
@@ -106,6 +111,24 @@ td {
 .radButtons:checked + label{
     background: linear-gradient(to bottom, #18243F 0%, #301c30 100%);
     color: white;
+}
+
+#saveBtn{
+    font-family: sans-serif;
+    background-color: #1c1129;
+    border-radius: 5px;
+    padding: 25px 90px;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    margin: auto;
+    border: 3px;
+    border-style: solid;
+    border-color: #1c1129;
+}
+
+#quiz-endcard{
+    text-align: center;
 }
 
 #mini-hero-banner {

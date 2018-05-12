@@ -22,6 +22,7 @@ function startQuiz(){
     q_set = $("#startQuizBtn").attr('data-set');
     
 	$("#startQuizBtn").hide();
+	$(".taken").hide();
 	$("#quizContainer").show();
 
 	getNextQuestion();

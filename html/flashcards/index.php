@@ -78,7 +78,9 @@
 
                     if($res->num_rows > 0){
                         $score = $res->fetch_assoc()['score'];
-                        echo "<h2>You've Already done this quiz! Your score was $score</h2>";
+                        echo "<h2 class='taken'>You've Already done this quiz! Your score was $score</h2>";
+                        echo "<button id='startQuizBtn' data-set = $set >Take Anyway</button>";
+                        echo "<p class='taken'>*this will not be saved*</p>";
                     }else{
                         echo "<button id='startQuizBtn' data-set = $set >GO</button>";
                     }
@@ -120,7 +122,7 @@
             <form action="end.php" method="POST">
                 <input type="hidden" name = "score" id = "endScore">
                 <input type="hidden" name="set" id = "endSet">
-                <input type="submit" value = "Save">
+                <input id = "saveBtn" type="submit" value = "Save">
             </form>
         </div>
     </div>
