@@ -78,6 +78,51 @@
                     <li>PHP 5</li>
                     <p>The latest version of PHP that was released in July of 2004. </p>
                 </ul>
+                <h3>PHP Syntax</h3>
+                <textarea rows="5" cols="80" name="code" id="codeIn" class="codeArea PHP">
+&lt;?php
+    // PHP codes
+?&gt;
+                </textarea>
+                <p>PHP files contain PHP scripting codes, and sometimes HTML tags.</p>
+                <p>PHP has ten primitive data types: boolean, integer, float, string, array, object, callable, iterable, resource and NULL.</p>
+                <p>PHP is a loosely typed language. Here is how you declare a variable in PHP:</p>
+                <textarea rows="8" cols="80" name="code" id="codeIn" class="codeArea PHP">
+&lt;?php
+    $name = 'me';
+    $Name = 'you';
+    echo "$name, $Name" // echo is the print statement for PHP
+                    //the echo about should print "me, you"
+    $_var = 25; // variable name can also start with an underscore
+?&gt;
+                </textarea>
+                <p>Variables are declared with the '$' symbol and names can start with a big or small letter or an underscore. They cannot start with numbers or other characters.</p>
+                
+                <h3>Form Handling</h3>
+                <p>PHP can be used to handle form requests from HTML files.</p>
+                <textarea rows="9" cols="80" name="code" id="codeIn" class="codeArea PHP">
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;form action="greet.php" method="post"&gt;
+            &lt;p&gt;Name:&lt;/p&gt; &lt;input type="text" name="name"&gt;
+            &lt;input type="submit"&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </textarea>
+                <p>Here is an example of an HTML file with a form. When the submit button has been pressed, the data is sent to a file addressed in the action attribute of the form tag. The data is sent with an HTTP POST method.</p>
+                <textarea rows="10" cols="80" name="code" id="codeIn" class="codeArea PHP">
+// greet.php
+&lt;html&gt;
+    &lt;body&gt;
+       Welcome,
+        &lt;?php
+            echo $_POST["name"];
+        ?&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </textarea>
+                <p></p>
             </div>
             <div id="references">
                 <h3>References</h3>
