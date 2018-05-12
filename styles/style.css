@@ -271,16 +271,18 @@ td p {
     margin: 30px auto 0px;
 }
 
-table#glossary tbody {
+table#glossary tbody td{
     border-style: none;
     background-color: #f2e9e4;
-    
 }
 
-
-
-table p {
+table#glossary tbody td p{
+    border-style: none;
+    background-color: #f2e9e4;
     text-align: left;
+    margin: auto;
+    width: 90%;
+    display: block;
 }
 
 .search {
@@ -375,5 +377,12 @@ img {
     width: 80%;
     margin: auto;
     padding: 20px;
+}
+
+textarea{
+    width: 60%;
+    margin: auto;
+    display: block;
     font-size: 18etpx;
 }
+
