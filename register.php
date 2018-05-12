@@ -5,7 +5,7 @@
 	$homeUrl = "webtechlec.org";
 
 	if(isset($_SESSION['user'])){
-		header("Location: /");
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
 		die();
 	}
 
@@ -33,28 +33,74 @@
 
 ?>
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<script>
+    <!DOCTYPE html>
+    <html>
 
-			function validate(field){
-				if(field.value != document.getElementById("password").value){
-					field.setCustomValidity("Passwords Dont Match");
-				}else{
-					field.setCustomValidity("");
-				}
-			}
-			
-		</script>
-	</head>
-	<body>
-		<form method="POST" action="register.php">
-			<input type = "text" name = "username" placeholder="Username" required = "required">
-			<input type = "email" name = "email" placeholder="Email" required = "required">
-			<input id = "password" type="password" name = "password" placeholder="Password" required = "required">
-			<input type="password" name = "passwordConf" placeholder="Confirm Password" required = "required" oninput="validate(this)">
-			<input type="submit" value="register">
-		</form>
-	</body>
-</html>
+    <head>
+        <script>
+            function validate(field) {
+                if (field.value != document.getElementById("password").value) {
+                    field.setCustomValidity("Passwords Dont Match");
+                } else {
+                    field.setCustomValidity("");
+                }
+            }
+
+        </script>
+        <link rel="stylesheet" type="text/css" href="../styles/style.css">
+        <link rel="stylesheet" type="text/css" href="../styles/nav.css">
+        <link rel="stylesheet" type="text/css" href="/styles/login.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <title>Register</title>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li>
+                    <div class="dropdown">
+                        <div class="dropdown-button"><a href="./html/finals.html">Server Side Scripting</a>
+                            <div class="dropdown-content">
+                                <a href="./html/java.html">Java</a>
+                                <a href="./html/php.html">PHP</a>
+                                <a href="./html/javascript.html">JavaScript</a>
+                                <a href="./html/websecurity.html">Web Security</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <div class="dropdown-button">
+                            <a href="./html/flashcards/index.php">Review</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="./html/glossaryv2.html">Glossary</a></li>
+                <li><a href="./html/about.html">About</a></li>
+                <li><a href="./login.php">Login</a></li>
+                <li><a href="./register.php">Register</a></li>
+            </ul>
+        </nav>
+        <div id="mini-hero-banner">
+            <div id="particles-js"></div>
+            <script type="text/javascript" src="../scripts/particles.js"></script>
+            <script type="text/javascript" src="../scripts/particles-app.js"></script>
+            <div class="wrapper">
+                <h1>Register</h1>
+            </div>
+        </div>
+        <div id="login-container">
+            <form method="POST" action="register.php">
+                <p>Username</p>
+                <input type="text" name="username" required="required">
+                <br><p>Email</p><input type="email" name="email" required="required">
+                <br><p>Password</p><input id="password" type="password" name="password" required="required">
+                <br><p>Confirm Password</p><input type="password" name="passwordConf" required="required" oninput="validate(this)">
+                <br><input type="submit" value="REGISTER">
+            </form>
+        </div>
+    </body>
+
+    </html>
