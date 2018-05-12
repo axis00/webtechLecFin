@@ -2,7 +2,7 @@
 	session_start();
 
 	if(isset($_SESSION['user'])){
-		header("Location: /");
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
 		die();
 	}
 

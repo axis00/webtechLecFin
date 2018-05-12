@@ -5,6 +5,9 @@ $(document).ready(function(){
 
 	$("#explanation").hide();
 
+	$('#score-info #merrits').html(merrits);
+    $('#score-info #score').html(n_score);
+
 });
 
 var m_questionNumber = 0;
